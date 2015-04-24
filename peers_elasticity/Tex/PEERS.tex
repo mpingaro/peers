@@ -1,0 +1,55 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[italian]{babel}
+%\documentclass[10pt]{peers2012}
+\usepackage{epsfig,amsfonts,graphics}
+
+\title{PEERS Finite Element for Plane Elasticity (Implementation)}
+\author{Marco Pingaro$^{1}$, Paolo Venini$^{2}$}
+
+%\bigskip
+%\address{{\em $^{1}$ Department of Civil Engineering, University of Pavia,Italy
+%\\ E-mail: marco.pingaro@iuss.com\\
+%\bigskip
+%$^{2}$ Department of Structural Mechanics, University of Pavia, Italy
+%\\ E-mail: paolo.venini@unipv.it
+%}}
+
+
+\abstract{Mixed FEM, PEERS, Elasticity.
+\\[17pt]
+SUMMARY. We present an innovative method for the analysis of
+viscoleastic plane systems based on a truly-mixed Hellinger-Reissner
+variational principle, wherein stresses and velocities are the main
+variables and Lagrange multipliers, respectively. Our discretisation
+adopts the Arnold--Winther element \cite{aw1} as to the stress
+variables along with usual elementwise-linear displacements. An
+extension to the dynamic case is also introduced and discussed.}
+
+\begin{document}
+
+\input{macrosaa}
+\input{macrosbb}
+
+%
+\section{NOTAZIONI} \label{cap:notazioni}
+Per convenienza e compattezza si indicher\'{a} per distinguere vettori da scalari una linea sottostante,
+mentre per distinguere vettori da tensori rispettivamente una linea e due linee sottostanti.
+Definiamo alcuni operatori che saranno utili nel proseguo della trattazione.
+Date le funzioni $\eta$, $\underline{v}$ e $\underline{\underline{\tau}}$ su $\Omega$, definiamo i seguenti operatori:
+
+\begin{equation} \label{def:rotore-scalare}
+\underline{rot}\eta=\left(\frac{\partial\eta}{\partial y},-\frac{\partial\eta}{\partial x}\right),
+\end{equation}
+
+\begin{equation} \label{def:rotore-vett}
+rot \underline{v} = -\frac{\partial v_{1}}{\partial y}+\frac{\partial v_{2}}{\partial x},
+\end{equation}
+
+\begin{equation} \label{def:divergenza-tens}
+\underline{div}\underline{\underline{\tau}} = \left(\frac{\partial\tau_{11}}{\partial x}+
+\frac{\partial\tau_{12}}{\partial y},\frac{\partial\tau_{21}}{\partial x}+
+\frac{\partial\tau_{22}}{\partial y}\right),
+\end{equation}
+
+\end{document}
